@@ -1,0 +1,2 @@
+Dependencies for Project 'micro', Target 'Target 1': (DO NOT MODIFY !)
+F (.\sub_128bit_nos.s)(0x65C8DA74)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC17xx --list "sub_128bit_nos.lst" --xref -o "sub_128bit_nos.o" --depend "sub_128bit_nos.d")

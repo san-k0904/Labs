@@ -1,0 +1,156 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 EXPORT           Reset_Handler
+    9 00000000         Reset_Handler
+   10 00000000 F04F 0005       LDR              R0,=0X5
+   11 00000004 F04F 0104       LDR              R1,=0X4
+   12 00000008 F04F 0207       LDR              R2,=0X7
+   13 0000000C F04F 0302       LDR              R3,=0X2
+   14 00000010 F04F 0401       LDR              R4,=0X1
+   15 00000014 F04F 0506       LDR              R5,=0X6
+   16 00000018 F04F 0609       LDR              R6,=0X9
+   17 0000001C F04F 070A       LDR              R7,=0XA
+   18 00000020 F04F 0803       LDR              R8,=0X3
+   19 00000024 F04F 0908       LDR              R9,=0X8
+   20 00000028 E8AD 03FF       STM              R13!,{R0-R9}
+   21 0000002C         
+   22 0000002C 466A            MOV              R2,R13      ; ITH INDEX;TOS
+   23 0000002E        C 
+                       MAX     RN               R12
+   24 0000002E        0 
+                       I_COUNTER
+                               RN               R0
+   25 0000002E        1 
+                       J_COUNTER
+                               RN               R1
+   26 0000002E F04F 0000       MOV              I_COUNTER,#0 ; I COUNTER FOR I 
+                                                            LOOP
+   27 00000032 F04F 0100       MOV              J_COUNTER,#0 ; J COUNTER FOR J 
+                                                            LOOP
+   28 00000036 4613    L1      MOV              R3,R2
+   29 00000038 4694            MOV              MAX,R2      ; MAX INDEX=ITH IND
+                                                            EX
+   30 0000003A F100 0101       ADD              J_COUNTER,I_COUNTER,#1 ; J=I+1
+   31 0000003E F1A3 0304 
+                       L2      SUB              R3,#4       ; JTH INDEX
+   32 00000042         
+   33 00000042 F85C 7C04       LDMDB            MAX,{R7}    ; A[MAX]
+   34 00000046 F853 8C04       LDMDB            R3,{R8}     ;A[J]
+   35 0000004A 45B8            CMP              R8,R7       ; COMPARE A[J] A[MA
+                                                            X]
+   36 0000004C D300            BLO              BRANCH
+   37 0000004E 469C            MOV              MAX,R3
+   38 00000050 F101 0101 
+                       BRANCH  ADD              J_COUNTER,#1 ; J=J+1
+   39 00000054 290A            CMP              J_COUNTER,#10
+   40 00000056 D1F2            BNE              L2
+   41 00000058 F852 4D04       LDMDB            R2!,{R4}
+   42 0000005C F85C 5D04       LDMDB            MAX!,{R5}
+   43 00000060 6015            STM              R2,{R5}
+   44 00000062 F8CC 4000       STM              MAX,{R4}
+   45 00000066 F100 0001       ADD              I_COUNTER,#1
+   46 0000006A 2809            CMP              I_COUNTER,#9
+   47 0000006C D1E3            BNE              L1
+   48 0000006E E7FE    STOP    B                STOP
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   49 00000070                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=q3_selec
+tion_sort_EA_stack.d -oq3_selection_sort_EA_stack.o -IC:\Keil\ARM\RV31\INC -IC:
+\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 
+1" --list=q3_selection_sort_EA_stack.lst q3_selection_sort_EA_stack.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file q3_selection_sort_EA_stack.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file q3_selection_sort_EA_stack.s
+   Uses
+      At line 2 in file q3_selection_sort_EA_stack.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BRANCH 00000050
+
+Symbol: BRANCH
+   Definitions
+      At line 38 in file q3_selection_sort_EA_stack.s
+   Uses
+      At line 36 in file q3_selection_sort_EA_stack.s
+Comment: BRANCH used once
+L1 00000036
+
+Symbol: L1
+   Definitions
+      At line 28 in file q3_selection_sort_EA_stack.s
+   Uses
+      At line 47 in file q3_selection_sort_EA_stack.s
+Comment: L1 used once
+L2 0000003E
+
+Symbol: L2
+   Definitions
+      At line 31 in file q3_selection_sort_EA_stack.s
+   Uses
+      At line 40 in file q3_selection_sort_EA_stack.s
+Comment: L2 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 9 in file q3_selection_sort_EA_stack.s
+   Uses
+      At line 5 in file q3_selection_sort_EA_stack.s
+      At line 8 in file q3_selection_sort_EA_stack.s
+
+STOP 0000006E
+
+Symbol: STOP
+   Definitions
+      At line 48 in file q3_selection_sort_EA_stack.s
+   Uses
+      At line 48 in file q3_selection_sort_EA_stack.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file q3_selection_sort_EA_stack.s
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+342 symbols in table

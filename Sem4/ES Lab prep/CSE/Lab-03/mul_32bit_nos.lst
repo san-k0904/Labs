@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4807            LDR              R0,=VAL1
+   12 00000002 4908            LDR              R1,=VAL2
+   13 00000004 4A08            LDR              R2,=RESULT
+   14 00000006        3 
+                       LSB     RN               R3
+   15 00000006        4 
+                       MSB     RN               R4
+   16 00000006 6805            LDR              R5,[R0]
+   17 00000008 680E            LDR              R6,[R1]
+   18 0000000A FBA5 3406       UMULL            LSB,MSB,R5,R6
+   19 0000000E F842 3B04       STR              LSB,[R2],#4
+   20 00000012 F842 4B04       STR              MSB,[R2],#4
+   21 00000016 E7FE    STOP    B                STOP
+   22 00000018 FFFFFFFF 
+                       VAL1    DCD              0XFFFFFFFF
+   23 0000001C 11111111 
+                       VAL2    DCD              0X11111111
+   24 00000020 00000000 
+              00000000 
+              00000000         AREA             my_data, DATA,READWRITE
+   25 00000000 00000000 
+                       RESULT  DCD              0
+   26 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=mul_32bi
+t_nos.d -omul_32bit_nos.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -I
+C:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=mul_32bit_nos.ls
+t mul_32bit_nos.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file mul_32bit_nos.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file mul_32bit_nos.s
+   Uses
+      At line 2 in file mul_32bit_nos.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file mul_32bit_nos.s
+   Uses
+      At line 5 in file mul_32bit_nos.s
+      At line 9 in file mul_32bit_nos.s
+
+STOP 00000016
+
+Symbol: STOP
+   Definitions
+      At line 21 in file mul_32bit_nos.s
+   Uses
+      At line 21 in file mul_32bit_nos.s
+Comment: STOP used once
+VAL1 00000018
+
+Symbol: VAL1
+   Definitions
+      At line 22 in file mul_32bit_nos.s
+   Uses
+      At line 11 in file mul_32bit_nos.s
+Comment: VAL1 used once
+VAL2 0000001C
+
+Symbol: VAL2
+   Definitions
+      At line 23 in file mul_32bit_nos.s
+   Uses
+      At line 12 in file mul_32bit_nos.s
+Comment: VAL2 used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file mul_32bit_nos.s
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 25 in file mul_32bit_nos.s
+   Uses
+      At line 13 in file mul_32bit_nos.s
+Comment: RESULT used once
+my_data 00000000
+
+Symbol: my_data
+   Definitions
+      At line 24 in file mul_32bit_nos.s
+   Uses
+      None
+Comment: my_data unused
+2 symbols
+344 symbols in table

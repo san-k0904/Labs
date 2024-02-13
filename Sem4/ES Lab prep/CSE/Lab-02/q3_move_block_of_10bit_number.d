@@ -1,0 +1,1 @@
+q3_move_block_of_10bit_number.o: q3_move_block_of_10bit_number.s

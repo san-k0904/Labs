@@ -1,0 +1,145 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCDU             0X10001000
+    5 00000004 00000000        DCDU             Reset_Handler
+    6 00000008                 AREA             my_code,CODE,READONLY
+    7 00000000                 ENTRY
+    8 00000000                 EXPORT           Reset_Handler
+    9 00000000         Reset_Handler
+   10 00000000        1 
+                       VAR1    RN               R1          ;RENAME REGISTER R1
+                                                             TO VAR1
+   11 00000000        2 
+                       VAR2    RN               R2          ;
+   12 00000000 00000010 
+                       CONST   EQU              0X10
+   13 00000000 4806            LDR              R0,=VAL1
+   14 00000002 4C07            LDR              R4,=DST
+   15 00000004 F04F 0210       MOV              VAR2,#CONST
+   16 00000008 7801            LDRB             VAR1,[R0]
+   17 0000000A 188B            ADDS             R3,VAR1,VAR2
+   18 0000000C F04F 0520       MOV              R5,#0X20
+   19 00000010 F804 3B01       STRB             R3,[R4],#1
+   20 00000014 7025            STRB             R5,[R4]
+   21 00000016         STOP
+   22 00000016 E7FE            B                STOP
+   23 00000018 0F 00   VAL1    DCWU             0XF
+   24 0000001A 00 00 00000000 
+              00000000         AREA             my_data,DATA,READWRITE
+   25 00000000 00 00 00 
+              00 00 00 
+              00 00    DST     SPACE            8
+   26 00000008                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=solved_p
+roblem.d -osolved_problem.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include 
+-IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=solved_problem
+.lst solved_problem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file solved_problem.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file solved_problem.s
+   Uses
+      At line 2 in file solved_problem.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 9 in file solved_problem.s
+   Uses
+      At line 5 in file solved_problem.s
+      At line 8 in file solved_problem.s
+
+STOP 00000016
+
+Symbol: STOP
+   Definitions
+      At line 21 in file solved_problem.s
+   Uses
+      At line 22 in file solved_problem.s
+Comment: STOP used once
+VAL1 00000018
+
+Symbol: VAL1
+   Definitions
+      At line 23 in file solved_problem.s
+   Uses
+      At line 13 in file solved_problem.s
+Comment: VAL1 used once
+my_code 00000000
+
+Symbol: my_code
+   Definitions
+      At line 6 in file solved_problem.s
+   Uses
+      None
+Comment: my_code unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 25 in file solved_problem.s
+   Uses
+      At line 14 in file solved_problem.s
+Comment: DST used once
+my_data 00000000
+
+Symbol: my_data
+   Definitions
+      At line 24 in file solved_problem.s
+   Uses
+      None
+Comment: my_data unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CONST 00000010
+
+Symbol: CONST
+   Definitions
+      At line 12 in file solved_problem.s
+   Uses
+      At line 15 in file solved_problem.s
+Comment: CONST used once
+1 symbol
+344 symbols in table

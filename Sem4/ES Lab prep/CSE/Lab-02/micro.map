@@ -1,0 +1,13 @@
+ARM Linker, 5.03 [Build 24] [MDK-ARM Lite]
+
+==============================================================================
+
+Section Cross References
+
+    additional_q1_reverse_array.o(RESET) refers to additional_q1_reverse_array.o(mycode) for Reset_Handler
+    additional_q1_reverse_array.o(RESET) refers to q2_move_data.o(mycode) for Reset_Handler
+    additional_q1_reverse_array.o(mycode) refers to additional_q1_reverse_array.o(my_data) for DST
+    q2_move_data.o(RESET) refers to additional_q1_reverse_array.o(mycode) for Reset_Handler
+    q2_move_data.o(RESET) refers to q2_move_data.o(mycode) for Reset_Handler
+    q2_move_data.o(mycode) refers to q2_move_data.o(my_data) for DST
+

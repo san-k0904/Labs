@@ -1,0 +1,107 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4801            LDR              R0,=SRC
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004         STOP
+   14 00000004 E7FE            B                STOP
+   15 00000006 00 00 00000000  AREA             my_data,DATA,READONLY
+   16 00000000 FF90FF78 
+                       SRC     DCD              0XFF90FF78
+   17 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=store_da
+ta.d -ostore_data.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Kei
+l\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=store_data.lst store_d
+ata.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file store_data.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file store_data.s
+   Uses
+      At line 2 in file store_data.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file store_data.s
+   Uses
+      At line 5 in file store_data.s
+      At line 9 in file store_data.s
+
+STOP 00000004
+
+Symbol: STOP
+   Definitions
+      At line 13 in file store_data.s
+   Uses
+      At line 14 in file store_data.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file store_data.s
+   Uses
+      None
+Comment: mycode unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SRC 00000000
+
+Symbol: SRC
+   Definitions
+      At line 16 in file store_data.s
+   Uses
+      At line 11 in file store_data.s
+Comment: SRC used once
+my_data 00000000
+
+Symbol: my_data
+   Definitions
+      At line 15 in file store_data.s
+   Uses
+      None
+Comment: my_data unused
+2 symbols
+340 symbols in table

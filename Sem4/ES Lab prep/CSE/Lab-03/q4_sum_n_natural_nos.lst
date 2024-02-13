@@ -1,0 +1,121 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4805            LDR              R0,=SRC
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004 FB01 1201       MLA              R2,R1,R1,R1
+   14 00000008 EA4F 0252       LSR              R2,#1       ;
+   15 0000000C 4803            LDR              R0,=DST
+   16 0000000E 6002            STR              R2,[R0]
+   17 00000010 E7FE    STOP    B                STOP
+   18 00000012 00 00 00000010 
+                       SRC     DCD              0X10
+   19 00000018 00000000 
+              00000000         AREA             my_data,DATA,READWRITE
+   20 00000000 00000000 
+                       DST     DCD              0
+   21 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=q4_sum_n
+_natural_nos.d -oq4_sum_n_natural_nos.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CM
+SIS\Include -IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=q4
+_sum_n_natural_nos.lst q4_sum_n_natural_nos.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file q4_sum_n_natural_nos.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file q4_sum_n_natural_nos.s
+   Uses
+      At line 2 in file q4_sum_n_natural_nos.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file q4_sum_n_natural_nos.s
+   Uses
+      At line 5 in file q4_sum_n_natural_nos.s
+      At line 9 in file q4_sum_n_natural_nos.s
+
+SRC 00000014
+
+Symbol: SRC
+   Definitions
+      At line 18 in file q4_sum_n_natural_nos.s
+   Uses
+      At line 11 in file q4_sum_n_natural_nos.s
+Comment: SRC used once
+STOP 00000010
+
+Symbol: STOP
+   Definitions
+      At line 17 in file q4_sum_n_natural_nos.s
+   Uses
+      At line 17 in file q4_sum_n_natural_nos.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file q4_sum_n_natural_nos.s
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 20 in file q4_sum_n_natural_nos.s
+   Uses
+      At line 15 in file q4_sum_n_natural_nos.s
+Comment: DST used once
+my_data 00000000
+
+Symbol: my_data
+   Definitions
+      At line 19 in file q4_sum_n_natural_nos.s
+   Uses
+      None
+Comment: my_data unused
+2 symbols
+341 symbols in table

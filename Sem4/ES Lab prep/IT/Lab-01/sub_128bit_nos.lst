@@ -1,0 +1,160 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 481A            LDR              R0,=VAL1
+   12 00000002 491B            LDR              R1,=VAL2
+   13 00000004 4A1B            LDR              R2,=RESULT
+   14 00000006 F04F 0303       MOV              R3,#3
+   15 0000000A F04F 0404       MOV              R4,#4
+   16 0000000E FB03 0004       MLA              R0,R3,R4,R0
+   17 00000012 FB03 1104       MLA              R1,R3,R4,R1
+   18 00000016 F000 F80B       BL               SUBTRACTION
+   19 0000001A F842 7B04       STR              R7,[R2],#4
+   20 0000001E F842 9B04       STR              R9,[R2],#4
+   21 00000022 F000 F805       BL               SUBTRACTION
+   22 00000026 F842 7B04       STR              R7,[R2],#4
+   23 0000002A F842 9B04       STR              R9,[R2],#4
+   24 0000002E E7FE    STOP    B                STOP
+   25 00000030         SUBTRACTION
+   26 00000030 F850 7904       LDR              R7,[R0],#-4
+   27 00000034 F851 8904       LDR              R8,[R1],#-4
+   28 00000038 F850 9904       LDR              R9,[R0],#-4
+   29 0000003C F851 A904       LDR              R10,[R1],#-4
+   30 00000040 EBB7 0708       SUBS             R7,R8
+   31 00000044 EB69 090A       SBC              R9,R10
+   32 00000048 4770            BX               LR
+   33 0000004A 00 00 00000005 
+              00000006 
+              00000007 
+              00000003 VAL1    DCD              0X5,0X6,0X7,0X3
+   34 0000005C 00000001 
+              00000002 
+              00000003 
+              00000004 VAL2    DCD              0X1,0X2,0X3,0X4
+   35 0000006C 00000000 
+              00000000 
+              00000000         AREA             my_data, DATA,READWRITE
+   36 00000000 00000000 
+                       RESULT  DCD              0
+   37 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=sub_128b
+it_nos.d -osub_128bit_nos.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include 
+-IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=sub_128bit_nos
+.lst sub_128bit_nos.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file sub_128bit_nos.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file sub_128bit_nos.s
+   Uses
+      At line 2 in file sub_128bit_nos.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file sub_128bit_nos.s
+   Uses
+      At line 5 in file sub_128bit_nos.s
+      At line 9 in file sub_128bit_nos.s
+
+STOP 0000002E
+
+Symbol: STOP
+   Definitions
+      At line 24 in file sub_128bit_nos.s
+   Uses
+      At line 24 in file sub_128bit_nos.s
+Comment: STOP used once
+SUBTRACTION 00000030
+
+Symbol: SUBTRACTION
+   Definitions
+      At line 25 in file sub_128bit_nos.s
+   Uses
+      At line 18 in file sub_128bit_nos.s
+      At line 21 in file sub_128bit_nos.s
+
+VAL1 0000004C
+
+Symbol: VAL1
+   Definitions
+      At line 33 in file sub_128bit_nos.s
+   Uses
+      At line 11 in file sub_128bit_nos.s
+Comment: VAL1 used once
+VAL2 0000005C
+
+Symbol: VAL2
+   Definitions
+      At line 34 in file sub_128bit_nos.s
+   Uses
+      At line 12 in file sub_128bit_nos.s
+Comment: VAL2 used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file sub_128bit_nos.s
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 36 in file sub_128bit_nos.s
+   Uses
+      At line 13 in file sub_128bit_nos.s
+Comment: RESULT used once
+my_data 00000000
+
+Symbol: my_data
+   Definitions
+      At line 35 in file sub_128bit_nos.s
+   Uses
+      None
+Comment: my_data unused
+2 symbols
+343 symbols in table

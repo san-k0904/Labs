@@ -1,0 +1,145 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             my_code,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480A            LDR              R0,=SRC
+   12 00000002 7801            LDRB             R1,[R0]
+   13 00000004 4A0A            LDR              R2,=DST
+   14 00000006 F04F 0402       MOV              R4,#2
+   15 0000000A F001 030F 
+                       L1      AND              R3,R1,#0XF
+   16 0000000E EA4F 1111       LSR              R1,#4       ;
+   17 00000012 3C01            SUBS             R4,#1
+   18 00000014 2B09            CMP              R3,#0X9
+   19 00000016 D901            BLS              L2
+   20 00000018 F103 0307       ADD              R3,#0X7
+   21 0000001C F103 0330 
+                       L2      ADD              R3,#0X30
+   22 00000020 F802 3B01       STRB             R3,[R2],#1
+   23 00000024 D1F1            BNE              L1
+   24 00000026 E7FE    STOP    B                STOP
+   25 00000028 23      SRC     DCB              0X23
+   26 00000029 00 00 00 
+              00000000 
+              00000000         AREA             my_data,DATA,READWRITE
+   27 00000000 00 00   DST     DCW              0
+   28 00000002                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=q1_hexto
+ASCII.d -oq1_hextoASCII.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -I
+C:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=q1_hextoASCII.ls
+t q1_hextoASCII.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file q1_hextoASCII.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file q1_hextoASCII.s
+   Uses
+      At line 2 in file q1_hextoASCII.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+L1 0000000A
+
+Symbol: L1
+   Definitions
+      At line 15 in file q1_hextoASCII.s
+   Uses
+      At line 23 in file q1_hextoASCII.s
+Comment: L1 used once
+L2 0000001C
+
+Symbol: L2
+   Definitions
+      At line 21 in file q1_hextoASCII.s
+   Uses
+      At line 19 in file q1_hextoASCII.s
+Comment: L2 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file q1_hextoASCII.s
+   Uses
+      At line 5 in file q1_hextoASCII.s
+      At line 9 in file q1_hextoASCII.s
+
+SRC 00000028
+
+Symbol: SRC
+   Definitions
+      At line 25 in file q1_hextoASCII.s
+   Uses
+      At line 11 in file q1_hextoASCII.s
+Comment: SRC used once
+STOP 00000026
+
+Symbol: STOP
+   Definitions
+      At line 24 in file q1_hextoASCII.s
+   Uses
+      At line 24 in file q1_hextoASCII.s
+Comment: STOP used once
+my_code 00000000
+
+Symbol: my_code
+   Definitions
+      At line 7 in file q1_hextoASCII.s
+   Uses
+      None
+Comment: my_code unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 27 in file q1_hextoASCII.s
+   Uses
+      At line 13 in file q1_hextoASCII.s
+Comment: DST used once
+my_data 00000000
+
+Symbol: my_data
+   Definitions
+      At line 26 in file q1_hextoASCII.s
+   Uses
+      None
+Comment: my_data unused
+2 symbols
+343 symbols in table
