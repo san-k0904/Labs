@@ -1,0 +1,64 @@
+$date
+	Sat Nov 18 20:22:07 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module lab2_2_tb $end
+$var wire 1 ! S $end
+$var wire 1 " Cout $end
+$var reg 1 # Cin $end
+$var reg 2 $ x [1:0] $end
+$scope module l22 $end
+$var wire 1 # Cin $end
+$var wire 2 % x [1:0] $end
+$var reg 1 " Cout $end
+$var reg 1 ! S $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 %
+b0 $
+0#
+0"
+0!
+$end
+#20
+1!
+b10 $
+b10 %
+#40
+b1 $
+b1 %
+#60
+1"
+0!
+b11 $
+b11 %
+#80
+0"
+1!
+b0 $
+b0 %
+1#
+#100
+1"
+0!
+b10 $
+b10 %
+#120
+b1 $
+b1 %
+#140
+1!
+b11 $
+b11 %
+#160
