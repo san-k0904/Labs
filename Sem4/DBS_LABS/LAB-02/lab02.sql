@@ -83,6 +83,12 @@ where id not in(select id
     			from teaches t
     			where i.id=t.id);
 
+--OR just 
+select id,name
+from instructor i
+where id not in(select id
+    			from teaches t);
+
 
 --Q15
 select * from SECTION;
