@@ -157,7 +157,7 @@ where t.course_id in(
 
 
 --Q16
-select s.id,s.name
+select distinct s.id,s.name
 from student s,takes t
 where (
     select count(t2.course_id)
