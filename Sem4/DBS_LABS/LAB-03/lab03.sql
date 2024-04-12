@@ -48,6 +48,17 @@ from(
 select * from takes where course_id='BIO-347';
 select * from course;
 select * from teaches;
+
+--Correct code according to manual
+select course_Id,Title
+from( select c.course_id,c.title from
+course c)
+minus
+(select t.course_id,c.title from
+course c, takes t
+where t.course_id=c.course_id);
+--Other way to do it(not the one asked in manual)
+
 SELECT c.title
 FROM course c
 WHERE not exists (
