@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/sankalpkatyayanan/Documents/Labs/Sem4/DAA_Lab/Lab-01/q2_adjacency'
+relocations:
+  - { offsetInCU: 0xE4, offset: 0xE4, size: 0x8, addend: 0x0, symName: _AdjacencyMatrix, symObjAddr: 0x0, symBinAddr: 0x100003840, symSize: 0x70 }
+  - { offsetInCU: 0xCA, offset: 0xCA, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x428, symBinAddr: 0x100003C68, symSize: 0x180 }
+  - { offsetInCU: 0x196, offset: 0x196, size: 0x8, addend: 0x0, symName: _print_adjacency, symObjAddr: 0x2D0, symBinAddr: 0x100003B10, symSize: 0x158 }
+  - { offsetInCU: 0x19E, offset: 0x19E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x428, symBinAddr: 0x100003C68, symSize: 0x180 }
+  - { offsetInCU: 0x24E, offset: 0x24E, size: 0x8, addend: 0x0, symName: _Adjacency, symObjAddr: 0x1DC, symBinAddr: 0x100003A1C, symSize: 0xF4 }
+  - { offsetInCU: 0x256, offset: 0x256, size: 0x8, addend: 0x0, symName: _print_adjacency, symObjAddr: 0x2D0, symBinAddr: 0x100003B10, symSize: 0x158 }
+  - { offsetInCU: 0x2EF, offset: 0x2EF, size: 0x8, addend: 0x0, symName: _AdjacencyList, symObjAddr: 0x70, symBinAddr: 0x1000038B0, symSize: 0x16C }
+  - { offsetInCU: 0x2F7, offset: 0x2F7, size: 0x8, addend: 0x0, symName: _Adjacency, symObjAddr: 0x1DC, symBinAddr: 0x100003A1C, symSize: 0xF4 }
+  - { offsetInCU: 0x38E, offset: 0x38E, size: 0x8, addend: 0x0, symName: _AdjacencyMatrix, symObjAddr: 0x0, symBinAddr: 0x100003840, symSize: 0x70 }
+  - { offsetInCU: 0x396, offset: 0x396, size: 0x8, addend: 0x0, symName: _AdjacencyList, symObjAddr: 0x70, symBinAddr: 0x1000038B0, symSize: 0x16C }
+...

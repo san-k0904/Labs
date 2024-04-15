@@ -1,0 +1,233 @@
+$date
+	Sat Sep  9 23:51:23 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module multiplier_tb $end
+$var wire 6 ! P [5:0] $end
+$var reg 3 " X [2:0] $end
+$var reg 3 # Y [2:0] $end
+$scope module multi $end
+$var wire 3 $ X [2:0] $end
+$var wire 3 % Y [2:0] $end
+$var wire 1 & zero_bit $end
+$var wire 2 ' s [1:0] $end
+$var wire 3 ( c1 [3:1] $end
+$var wire 3 ) c0 [3:1] $end
+$var wire 6 * P [5:0] $end
+$scope module stage0 $end
+$var wire 1 & Cin $end
+$var wire 1 + Cout $end
+$var wire 1 , S $end
+$var wire 1 - g $end
+$var wire 1 . x $end
+$var wire 1 / y $end
+$upscope $end
+$scope module stage1 $end
+$var wire 1 0 Cin $end
+$var wire 1 1 Cout $end
+$var wire 1 2 S $end
+$var wire 1 3 g $end
+$var wire 1 4 x $end
+$var wire 1 5 y $end
+$upscope $end
+$scope module stage3 $end
+$var wire 1 6 Cin $end
+$var wire 1 7 Cout $end
+$var wire 1 8 S $end
+$var wire 1 9 g $end
+$var wire 1 : x $end
+$var wire 1 & y $end
+$upscope $end
+$scope module stage4 $end
+$var wire 1 & Cin $end
+$var wire 1 ; Cout $end
+$var wire 1 < S $end
+$var wire 1 = g $end
+$var wire 1 > x $end
+$var wire 1 ? y $end
+$upscope $end
+$scope module stage5 $end
+$var wire 1 @ Cin $end
+$var wire 1 A Cout $end
+$var wire 1 B S $end
+$var wire 1 C g $end
+$var wire 1 D x $end
+$var wire 1 E y $end
+$upscope $end
+$scope module stage6 $end
+$var wire 1 F Cin $end
+$var wire 1 G Cout $end
+$var wire 1 H S $end
+$var wire 1 I g $end
+$var wire 1 J x $end
+$var wire 1 K y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+1D
+1C
+1B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+1.
+1-
+1,
+0+
+b1010 *
+b0 )
+bz00 (
+b0 '
+0&
+b101 %
+b10 $
+b101 #
+b10 "
+b1010 !
+$end
+#20
+0,
+b0 !
+b0 *
+0B
+0-
+0C
+0.
+0D
+b10 #
+b10 %
+b0 "
+b0 $
+#40
+1@
+1;
+1G
+1K
+1F
+1?
+17
+bz11 (
+1A
+12
+10
+16
+1+
+b111 )
+11
+0E
+b1 '
+08
+0<
+0B
+1H
+19
+0=
+1C
+0I
+b110001 !
+b110001 *
+1.
+1/
+14
+15
+1:
+1>
+1D
+1J
+b111 #
+b111 %
+b111 "
+b111 $
+#60
+0G
+0F
+0A
+1B
+0?
+1H
+02
+1C
+1I
+00
+0@
+06
+0E
+0K
+0+
+bz00 (
+0;
+01
+b0 '
+08
+b0 )
+07
+0<
+09
+0=
+0.
+04
+05
+0:
+b11000 !
+b11000 *
+0/
+0>
+b100 #
+b100 %
+b110 "
+b110 $
+#80
+1<
+1=
+1?
+b1 '
+12
+0H
+b100 !
+b100 *
+0B
+13
+0I
+0C
+14
+0J
+0D
+b1 #
+b1 %
+b100 "
+b100 $
+#100
