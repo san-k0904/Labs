@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 void insertion_sort(int* arr,int n){
-    int x,temp;
+    int x;
     int j;
     for(int i=1;i<n;i++){
         x=arr[i];
